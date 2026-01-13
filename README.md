@@ -18,7 +18,8 @@ Este proyecto es una solución a la prueba técnica de Frontend con enfoque en S
 ```bash
 npm install
 npm run dev
-
+```
+----
 ## Estructura del proyecto
 
 Home: listado de artículos con URLs semánticas
