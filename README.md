@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Prueba Técnica – Frontend SEO con Next.js
 
-## Getting Started
+Este proyecto es una solución a la prueba técnica de Frontend con enfoque en SEO, utilizando **Next.js (App Router)** y priorizando pre-renderizado, metadata dinámica y HTML semántico.
 
-First, run the development server:
+---
+
+## Tecnologías utilizadas
+
+- Next.js (App Router)
+- React
+- TypeScript
+- Tailwind CSS
+
+---
+
+##  Cómo ejecutar el proyecto
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Estructura del proyecto
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Home: listado de artículos con URLs semánticas
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Detalle de artículo: página dinámica basada en slug
 
-## Learn More
+404 personalizado
 
-To learn more about Next.js, take a look at the following resources:
+Datos mockeados desde un archivo local
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Estrategia de Rendering
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Home (/)
+Utiliza Static Site Generation (SSG) para garantizar que el listado de artículos sea completamente indexable por motores de búsqueda y tenga un excelente performance inicial.
 
-## Deploy on Vercel
+Detalle de artículo (/articulos/[slug])
+También utiliza SSG, generando las rutas dinámicas en build time mediante generateStaticParams.
+Esto permite servir HTML pre-renderizado para cada artículo, ideal para sitios orientados a SEO.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Decisiones de SEO
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+HTML completamente pre-renderizado
+
+URLs amigables y semánticas
+
+Uso correcto de etiquetas semánticas (main, article, header, section)
+
+Metadata dinámica por página (title y description)
+
+Manejo de página 404 personalizada
+
+Enlaces accesibles y crawlables
+
+## Performance
+
+Server Components por defecto (sin client-only rendering innecesario)
+
+Uso de next/image para optimización de imágenes
+
+Estructura simple y ligera enfocada en Core Web Vitals
+
+## Accesibilidad
+
+Uso de HTML semántico
+
+Imágenes con atributo alt
+
+Enlaces claros y accesibles
+
+Navegación sin dependencias de JavaScript del lado del cliente
